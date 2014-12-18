@@ -1,6 +1,6 @@
-# Detect Cycle `require` In Code #
+# Detect Cycle `require` #
 
-`nocycle` is a tiny node module to detect cycle `require`. If a file `a.js` requires `b.js` and `b.js` also requires `a.js` directly or indirectly, `nocycle` will find the cycle and report it.
+`nocycle` is a tiny node module to detect cycle `require`. If a file `a.js` requires `b.js` while `b.js` also requires `a.js` directly or indirectly, `nocycle` will find the cycle.
 
 It's extremely simple to use it.
 
@@ -8,11 +8,12 @@ First, install this node module.
 
 	npm install --save nocycle
 
-Then, require it and call `detect` when cycle detection is needed.
+Then, require it and call `detect` to start detecting cycle `require`.
 
 ```javascript
 var path = require('path');
 
+// start to detect cycle require after `detect` is called.
 require('nocycle').detect(function(stack) {
 	var top = path.relative(basedir, stack[0]);
     console.log('cycle require is detected. require stack is:');
@@ -25,12 +26,13 @@ require('nocycle').detect(function(stack) {
 });
 ```
 
-If there is any cycle require, this code will print something like following.
+If there is any cycle `require`, above code will print something like following.
 
 	cycle require is detected. require stack is:
 		* a.js
 		  b.js
-		  a.js
+		* a.js
+		  index.js
 
 *Caveat*: `nocycle` uses "black magic" to hack node.js' module loading process. It may be broken at anytime if node changes its implementation. Anyway, even if it's changed, there must be another black magic to implement it. I'll find out the way at that time.
 
