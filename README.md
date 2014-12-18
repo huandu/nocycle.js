@@ -1,4 +1,4 @@
-# nocycle - No More Cycle Require In Your Code #
+# Detect Cycle `require` In Code #
 
 `nocycle` is a tiny node module to detect cycle `require`. If a file `a.js` requires `b.js` and `b.js` also requires `a.js` directly or indirectly, `nocycle` will find the cycle and report it.
 
@@ -31,5 +31,7 @@ If there is any cycle require, this code will print something like following.
 		* a.js
 		  b.js
 		  a.js
+
+*Caveat*: `nocycle` uses "black magic" to hack node.js' module loading process. It may be broken at anytime if node changes its implementation. Anyway, even if it's changed, there must be another black magic to implement it. I'll find out the way at that time.
 
 This module is licensed under the MIT license that can be found in the LICENSE file.
