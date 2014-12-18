@@ -12,6 +12,7 @@ Then, require it and call `detect` to start detecting cycle `require`.
 
 ```javascript
 var path = require('path');
+var basedir = path.dirname(require.main.filename);
 
 // start to detect cycle require after `detect` is called.
 require('nocycle').detect(function(stack) {
