@@ -1,0 +1,28 @@
+{
+  "name": "nocycle",
+  "version": "1.0.0",
+  "description": "Detect cycle require in code. If found one, it can invoke a callback function with details.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/huandu/nocycle.js.git"
+  },
+  "keywords": [
+    "cycle",
+    "detect",
+    "require",
+    "debug",
+    "tool",
+    "test"
+  ],
+  "author": {
+    "name": "Huan Du",
+    "email": "i@huandu.me"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/huandu/nocycle.js/issues"
+  },
+  "homepage": "https://github.com/huandu/nocycle.js"
+}
