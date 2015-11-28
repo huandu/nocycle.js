@@ -69,15 +69,12 @@ function checkedRequire(name) {
         _fileMap[filename] = false;
     }
 
-    var throwException;
     try {
 	return _require.call(m, name);
-    } catch (requireException) {
-	throwException = requireException;
+    } catch (e) {
+        throw e;
     } finally {
 	_requireStack.pop();
 	_fileMap[filename] = true;
     }
-
-    throw throwException;
 }
