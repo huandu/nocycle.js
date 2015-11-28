@@ -1,6 +1,6 @@
 {
   "name": "nocycle",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Detect cycle require in code. If found one, it can invoke a callback function with details.",
   "main": "index.js",
   "repository": {
